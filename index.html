@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rakshini Arun | Healthcare · Business · Strategy</title>
+  <meta name="description" content="Personal portfolio of Rakshini Arun — BDS Graduate exploring the intersection of healthcare, business, finance and strategy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --yellow-bg: #FFF8E7;
+      --yellow-soft: #FFF3CC;
+      --yellow-card: #FFFBF0;
+      --yellow-border: #F5E6B0;
+      --yellow-deep: #F2D96A;
+
+      --pink: #E8639A;
+      --pink-light: #F4A7C3;
+      --pink-pale: #FCE8F1;
+      --pink-deep: #C94880;
+      --pink-muted: #F7C5DA;
+
+      --green: #4A7C5F;
+      --green-light: #6BAE82;
+      --green-pale: #E6F4EC;
+      --green-deep: #2F5C43;
+      --green-sage: #8CBF9E;
+
+      --text-dark: #2D2A26;
+      --text-mid: #5C5549;
+      --text-light: #9C9082;
+      --white: #FFFFFF;
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', sans-serif;
+      --font-display: 'Pacifico', cursive;
+
+      --shadow-sm: 0 2px 12px rgba(232, 99, 154, 0.08);
+      --shadow-md: 0 6px 28px rgba(232, 99, 154, 0.12);
+      --shadow-lg: 0 16px 48px rgba(74, 124, 95, 0.10);
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--yellow-bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--yellow-soft); }
+    ::-webkit-scrollbar-thumb { background: var(--pink-light); border-radius: 10px; }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; color: var(--pink); line-height: 1.2; }
+    p { color: var(--text-mid); font-size: 1rem; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== DECORATIVE ELEMENTS ===== */
+    .dot-pattern {
+      background-image: radial-gradient(circle, var(--pink-muted) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-pale);
+      border: 1px solid var(--green-sage);
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--pink);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      font-family: var(--font-sans);
+      color: var(--text-light);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto 56px;
+    }
+
+    .section-header { text-align: center; margin-bottom: 8px; }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 248, 231, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--yellow-border);
+      transition: box-shadow 0.3s ease;
+    }
+
+    nav.scrolled { box-shadow: 0 4px 24px rgba(232, 99, 154, 0.10); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--pink);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      padding: 7px 14px;
+      border-radius: 50px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--pink);
+      background: var(--pink-pale);
+    }
+
+    .nav-links a.active {
+      color: var(--pink);
+      background: var(--pink-pale);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      border: none;
+      background: transparent;
+      border-radius: var(--radius-sm);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--pink);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 248, 231, 0.98);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--yellow-border);
+      padding: 16px 0;
+      z-index: 999;
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--pink); }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.28s ease;
+      border: none;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(232, 99, 154, 0.35);
+    }
+
+    .btn-pink:hover {
+      background: var(--pink-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232, 99, 154, 0.40);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 4px 18px rgba(74, 124, 95, 0.30);
+    }
+
+    .btn-green:hover {
+      background: var(--green-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74, 124, 95, 0.36);
+    }
+
+    .btn-outline-pink {
+      background: transparent;
+      color: var(--pink);
+      border: 2px solid var(--pink);
+    }
+
+    .btn-outline-pink:hover {
+      background: var(--pink-pale);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-green {
+      background: transparent;
+      color: var(--green);
+      border: 2px solid var(--green);
+    }
+
+    .btn-outline-green:hover {
+      background: var(--green-pale);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      font-size: 0.8rem;
+      padding: 9px 20px;
+    }
+
+    /* ===== SECTION WRAPPER ===== */
+    section {
+      padding: 100px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section.full-width {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== HERO ===== */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 32px 80px;
+      max-width: 100%;
+    }
+
+    .hero-bg-circles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-bg-circles span {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .hero-bg-circles span:nth-child(1) {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, var(--pink-muted) 0%, transparent 70%);
+      top: -80px;
+      right: -100px;
+      opacity: 0.55;
+    }
+
+    .hero-bg-circles span:nth-child(2) {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
+      bottom: 40px;
+      left: -60px;
+      opacity: 0.65;
+    }
+
+    .hero-bg-circles span:nth-child(3) {
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, var(--yellow-deep) 0%, transparent 70%);
+      top: 38%;
+      left: 8%;
+      opacity: 0.35;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: var(--green-pale);
+      border: 1px solid var(--green-sage);
+      padding: 6px 20px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.2rem, 8vw, 6rem);
+      font-weight: 600;
+      color: var(--pink);
+      line-height: 1.05;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--pink-deep);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-sans);
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      font-weight: 500;
+      color: var(--green);
+      letter-spacing: 0.06em;
+      margin-bottom: 28px;
+    }
+
+    .hero-subtitle .dot {
+      color: var(--pink-light);
+      margin: 0 4px;
+    }
+
+    .hero-intro {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      z-index: 1;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--pink-light), transparent);
+      animation: scrollLine 1.8s ease infinite;
+    }
+
+    @keyframes scrollLine {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* ===== ABOUT ===== */
+    #about { background: transparent; }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-left { position: relative; }
+
+    .about-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--pink-pale);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 3px solid var(--pink-muted);
+      overflow: hidden;
+    }
+
+    .portrait-placeholder {
+      text-align: center;
+    }
+
+    .portrait-placeholder .icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--pink-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+
+    .portrait-placeholder .icon svg { color: var(--pink); }
+
+    .portrait-placeholder p {
+      font-size: 0.78rem;
+      color: var(--pink-light);
+      font-style: italic;
+    }
+
+    .about-floater {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--green);
+      color: var(--white);
+      padding: 16px 20px;
+      border-radius: 18px;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+      border: 3px solid var(--white);
+      max-width: 160px;
+      text-align: center;
+    }
+
+    .about-floater span {
+      display: block;
+      font-size: 1.4rem;
+      font-family: var(--font-serif);
+      font-weight: 300;
+      color: var(--yellow-deep);
+      margin-bottom: 2px;
+    }
+
+    .about-right h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--pink);
+      margin-bottom: 28px;
+      line-height: 1.15;
+    }
+
+    .about-paragraphs p {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      margin-bottom: 22px;
+      line-height: 1.8;
+      font-family: var(--font-sans);
+      font-weight: 300;
+    }
+
+    .about-paragraphs p:last-child { margin-bottom: 0; }
+
+    .about-skills {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-chip {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 50px;
+      background: var(--yellow-soft);
+      border: 1.5px solid var(--yellow-border);
+      color: var(--green-deep);
+      transition: all 0.2s;
+    }
+
+    .skill-chip:hover {
+      background: var(--pink-pale);
+      border-color: var(--pink-muted);
+      color: var(--pink-deep);
+    }
+
+    /* ===== INTERESTS ===== */
+    #interests {
+      background: var(--yellow-soft);
+      max-width: 100%;
+      padding: 100px 32px;
+    }
+
+    .interests-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+
+    .interest-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      border: 2px solid var(--yellow-border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .interest-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--pink), var(--pink-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .interest-card:hover { border-color: var(--pink-muted); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .interest-card:hover::before { transform: scaleX(1); }
+
+    .interest-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .interest-icon.pink { background: var(--pink-pale); }
+    .interest-icon.green { background: var(--green-pale); }
+    .interest-icon.yellow { background: #FFF3CC; }
+
+    .interest-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .interest-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .placeholder-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--green);
+      background: var(--green-pale);
+      border: 1px solid var(--green-sage);
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ===== BLOG ===== */
+    #blog { background: transparent; }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--yellow-border);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--pink-muted); }
+
+    .blog-card-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+
+    .blog-card-img.pink-bg { background: var(--pink-pale); }
+    .blog-card-img.green-bg { background: var(--green-pale); }
+    .blog-card-img.yellow-bg { background: #FFF3CC; }
+
+    .blog-card-body {
+      padding: 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .blog-category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--pink);
+      background: var(--pink-pale);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .blog-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .blog-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--pink);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .blog-excerpt {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.72;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    /* ===== RECIPES ===== */
+    #recipes {
+      background: var(--yellow-soft);
+      max-width: 100%;
+      padding: 100px 32px;
+    }
+
+    .recipes-inner { max-width: 1200px; margin: 0 auto; }
+
+    .recipe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .recipe-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 2px solid var(--yellow-border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .recipe-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--green-sage); }
+
+    .recipe-img {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-light);
+      position: relative;
+    }
+
+    .recipe-img.green-bg { background: var(--green-pale); }
+    .recipe-img.pink-bg { background: var(--pink-pale); }
+    .recipe-img.yellow-bg { background: #FFF3CC; }
+
+    .recipe-category-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--green);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .recipe-card-body { padding: 24px; }
+
+    .recipe-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--green-deep);
+      margin-bottom: 8px;
+    }
+
+    .recipe-desc {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    /* ===== RECIPE MODAL ===== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 42, 38, 0.55);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .recipe-modal {
+      background: var(--white);
+      border-radius: 28px;
+      max-width: 740px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      position: relative;
+      border: 2px solid var(--yellow-border);
+    }
+
+    .modal-img {
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--text-light);
+      border-radius: 26px 26px 0 0;
+    }
+
+    .modal-body { padding: 36px; }
+
+    .modal-close {
+      position: sticky;
+      top: 16px;
+      float: right;
+      width: 36px;
+      height: 36px;
+      background: var(--pink-pale);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      margin-left: 12px;
+      margin-top: -20px;
+    }
+
+    .modal-close:hover { background: var(--pink); color: var(--white); }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--pink);
+      margin-bottom: 8px;
+    }
+
+    .modal-prep {
+      font-size: 0.85rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+    }
+
+    .modal-section-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--green-deep);
+      margin-bottom: 14px;
+      margin-top: 28px;
+      padding-bottom: 8px;
+      border-bottom: 2px dashed var(--yellow-border);
+    }
+
+    .modal-body ul, .modal-body ol {
+      padding-left: 22px;
+    }
+
+    .modal-body li {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .modal-notes {
+      background: var(--yellow-soft);
+      border-left: 4px solid var(--pink-light);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-top: 24px;
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ===== PROJECTS ===== */
+    #projects { background: transparent; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      border: 2px solid var(--yellow-border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--green-sage); }
+
+    .project-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      background: var(--green-pale);
+      border: 1px solid var(--green-sage);
+      padding: 4px 12px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .project-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .project-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink-light);
+    }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      background: var(--yellow-soft);
+      max-width: 100%;
+      padding: 100px 32px;
+    }
+
+    .contact-inner { max-width: 800px; margin: 0 auto; }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: 28px;
+      border: 2px solid var(--yellow-border);
+      overflow: hidden;
+    }
+
+    .contact-top {
+      background: linear-gradient(135deg, var(--pink-pale) 0%, var(--green-pale) 100%);
+      padding: 52px 48px;
+      text-align: center;
+      border-bottom: 2px solid var(--yellow-border);
+    }
+
+    .contact-top h2 {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--pink);
+      margin-bottom: 10px;
+    }
+
+    .contact-top p {
+      font-size: 1rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    .contact-links {
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      border: 2px solid var(--yellow-border);
+      border-radius: 14px;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .contact-item:hover { border-color: var(--pink-muted); background: var(--pink-pale); }
+
+    .contact-item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon.pink { background: var(--pink-pale); }
+    .contact-item-icon.green { background: var(--green-pale); }
+
+    .contact-item-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 2px;
+    }
+
+    .contact-item-value {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 auto 56px;
+      max-width: 200px;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: var(--pink-muted);
+    }
+
+    .divider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink-light);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--text-dark);
+      padding: 48px 32px;
+      text-align: center;
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--pink-light);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--pink-light); }
+
+    .footer-copy {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+      .about-left { max-width: 340px; margin: 0 auto; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 72px 20px; }
+      #interests, #recipes, #contact { padding: 72px 20px; }
+
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .blog-grid, .projects-grid { grid-template-columns: 1fr; }
+      .recipe-grid { grid-template-columns: 1fr; }
+      .interests-grid { grid-template-columns: 1fr 1fr; }
+
+      .contact-top { padding: 36px 24px; }
+      .contact-links { padding: 28px 24px; }
+
+      .modal-body { padding: 24px; }
+
+      .hero-buttons { gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .interests-grid { grid-template-columns: 1fr; }
+      .nav-inner { padding: 0 16px; }
+      .hero-name { font-size: 3rem; }
+    }
+
+    /* ===== ACTIVE NAV HIGHLIGHT ===== */
+    .nav-links a.active {
+      color: var(--pink);
+      background: var(--pink-pale);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">Rakshini<span>.</span></div>
+      <ul class="nav-links" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#recipes">Recipes</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#home" onclick="closeMobileMenu()">Home</a>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#interests" onclick="closeMobileMenu()">Interests</a>
+    <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+    <a href="#recipes" onclick="closeMobileMenu()">Recipes</a>
+    <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+    <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="full-width" aria-label="Hero section">
+    <div class="hero-bg-circles" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="dot-pattern" style="position:absolute;inset:0;opacity:0.25;" aria-hidden="true"></div>
+    <div class="hero-inner reveal">
+      <div class="hero-eyebrow">Welcome to my corner of the internet</div>
+      <h1 class="hero-name">Rakshini<br /><em>Arun</em></h1>
+      <p class="hero-subtitle">
+        BDS Graduate
+        <span class="dot">•</span>
+        Healthcare
+        <span class="dot">•</span>
+        Business
+        <span class="dot">•</span>
+        Finance
+        <span class="dot">•</span>
+        Strategy
+      </p>
+      <p class="hero-intro">
+        A curious mind at the intersection of healthcare and business,<br />building intentionally — one skill, one idea, one day at a time.
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-pink">About Me</a>
+        <a href="#projects" class="btn btn-outline-green">Explore My Journey</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="section-header reveal">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title" id="about-heading">A little about who I am</h2>
+    </div>
+    <div class="about-layout">
+      <!-- EDIT: Replace this block with your actual photo using <img src="your-photo.jpg" alt="Rakshini Arun"> -->
+      <div class="about-left reveal">
+        <div class="about-portrait" role="img" aria-label="Photo placeholder for Rakshini Arun">
+          <div class="portrait-placeholder">
+            <div class="icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8639A" stroke-width="1.5">
+                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+              </svg>
+            </div>
+            <p>Your photo goes here</p>
+          </div>
+        </div>
+        <div class="about-floater" aria-label="Currently learning">
+          <span>Learning</span>
+          Business &amp; Finance
+        </div>
+      </div>
+
+      <div class="about-right reveal">
+        <h2 id="about-heading-detail">From the clinic to the boardroom — <em>and all the interesting spaces in between.</em></h2>
+        <!-- EDIT: Update the paragraphs below with your own words if needed -->
+        <div class="about-paragraphs">
+          <p>BDS graduate with a growing interest in the intersection of healthcare, business, finance and strategy.</p>
+          <p>My background in dentistry has given me exposure to healthcare, patient interaction, problem-solving and the realities of working within a healthcare ecosystem. I am now expanding my knowledge beyond clinical dentistry and building a stronger foundation in business and management.</p>
+          <p>Currently, I am developing skills in business fundamentals, finance, data analysis, Excel, communication and strategic thinking while preparing for the next stage of my academic and professional journey.</p>
+          <p>I am particularly interested in exploring how business, technology and strategy can create better outcomes in healthcare and other industries.</p>
+          <p>I believe in continuous learning and intentionally building my career one skill at a time.</p>
+        </div>
+        <!-- EDIT: Add or remove skill chips below -->
+        <div class="about-skills" aria-label="Skills I am building">
+          <span class="skill-chip">Business Fundamentals</span>
+          <span class="skill-chip">Finance</span>
+          <span class="skill-chip">Data Analysis</span>
+          <span class="skill-chip">Excel</span>
+          <span class="skill-chip">Strategic Thinking</span>
+          <span class="skill-chip">Healthcare</span>
+          <span class="skill-chip">Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INTERESTS ===== -->
+  <section id="interests" class="full-width" aria-labelledby="interests-heading">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-header reveal">
+        <div class="section-tag">Personal Interests</div>
+        <h2 class="section-title" id="interests-heading">Things I love</h2>
+        <p class="section-sub">This is a personal space — I will be adding my own interests and hobbies here soon. Each card below is a placeholder ready for me to fill in.</p>
+      </div>
+      <!-- EDIT: Replace each card's title, icon, and description with your actual interests -->
+      <div class="interests-grid">
+        <div class="interest-card reveal" role="article">
+          <div class="interest-icon pink" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8639A" stroke-width="1.8">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+          <h3>Learning</h3>
+          <p>Replace this with something you enjoy learning — a subject, a skill, or a topic that excites you.</p>
+          <span class="placeholder-badge">Edit this card</span>
+        </div>
+
+        <div class="interest-card reveal" role="article">
+          <div class="interest-icon green" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4A7C5F" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Creativity</h3>
+          <p>Do you enjoy art, writing, crafts, design, or any other creative outlet? Add it here and make this card yours.</p>
+          <span class="placeholder-badge">Edit this card</span>
+        </div>
+
+        <div class="interest-card reveal" role="article">
+          <div class="interest-icon yellow" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8A400" stroke-width="1.8">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <h3>Reading &amp; Ideas</h3>
+          <p>Books, articles, podcasts, or anything that sparks new thinking — add your favourite reads and ideas here.</p>
+          <span class="placeholder-badge">Edit this card</span>
+        </div>
+
+        <div class="interest-card reveal" role="article">
+          <div class="interest-icon pink" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E8639A" stroke-width="1.8">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Personal Interests</h3>
+          <p>This is your space. Add a hobby, a passion, a weekend activity, or anything that makes you, you.</p>
+          <span class="placeholder-badge">Edit this card</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section id="blog" aria-labelledby="blog-heading">
+    <div class="section-header reveal">
+      <div class="section-tag">Writing</div>
+      <h2 class="section-title" id="blog-heading">From my desk</h2>
+      <p class="section-sub">Thoughts on healthcare, business, finance, learning, and everything in between. New posts coming soon.</p>
+    </div>
+    <!-- EDIT: Replace each blog card with your actual blog posts. Duplicate a card to add more. -->
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-card-img pink-bg" aria-label="Blog post image placeholder">Blog post image placeholder</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <!-- EDIT: Update category and date -->
+            <span class="blog-category">Healthcare</span>
+            <span class="blog-date">Coming soon</span>
+          </div>
+          <!-- EDIT: Replace with your blog post title -->
+          <h3>Where Healthcare Meets Business Strategy</h3>
+          <!-- EDIT: Replace with your blog post excerpt -->
+          <p class="blog-excerpt">An exploration of how business thinking, financial awareness and strategic decision-making can reshape the way healthcare systems and practitioners operate.</p>
+          <a href="#" class="btn btn-outline-pink btn-sm" aria-label="Read more about healthcare and business strategy">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-card-img green-bg" aria-label="Blog post image placeholder">Blog post image placeholder</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-category">Career Development</span>
+            <span class="blog-date">Coming soon</span>
+          </div>
+          <h3>Transitioning from Clinical to Corporate: My Journey</h3>
+          <p class="blog-excerpt">What it really feels like to pivot from a clinical background toward business and strategy — the challenges, the learnings and the unexpected rewards along the way.</p>
+          <a href="#" class="btn btn-outline-pink btn-sm" aria-label="Read more about career transition">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card reveal">
+        <div class="blog-card-img yellow-bg" aria-label="Blog post image placeholder">Blog post image placeholder</div>
+        <div class="blog-card-body">
+          <div class="blog-meta">
+            <span class="blog-category">Learning</span>
+            <span class="blog-date">Coming soon</span>
+          </div>
+          <h3>Building Skills Intentionally: A Beginner's Finance Diary</h3>
+          <p class="blog-excerpt">From zero to fundamentals — documenting what it feels like to learn finance and data analysis from scratch as a healthcare professional with a curious mind.</p>
+          <a href="#" class="btn btn-outline-pink btn-sm" aria-label="Read more about learning finance">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== RECIPES ===== -->
+  <section id="recipes" class="full-width" aria-labelledby="recipes-heading">
+    <div class="recipes-inner">
+      <div class="section-header reveal">
+        <div class="section-tag">In the Kitchen</div>
+        <h2 class="section-title" id="recipes-heading">Recipes I love</h2>
+        <p class="section-sub">A personal little collection of recipes I enjoy making. Not a food blog — just good food worth sharing.</p>
+      </div>
+      <!-- EDIT: Replace each recipe card with your actual recipes. -->
+      <div class="recipe-grid">
+        <div class="recipe-card reveal" onclick="openModal('recipe1')" role="button" tabindex="0" aria-label="View recipe 1" onkeypress="if(event.key==='Enter')openModal('recipe1')">
+          <div class="recipe-img green-bg" aria-label="Recipe image placeholder">
+            <div style="text-align:center;padding:20px;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6BAE82" stroke-width="1.5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              <p style="margin-top:8px;font-size:0.78rem;">Add recipe photo here</p>
+            </div>
+            <span class="recipe-category-badge">Your Category</span>
+          </div>
+          <div class="recipe-card-body">
+            <h3>Your Recipe Name Here</h3>
+            <p class="recipe-desc">Replace this with a short description of the recipe — what it tastes like, when you love making it, or why it is special to you.</p>
+            <span class="btn btn-outline-green btn-sm">View Recipe</span>
+          </div>
+        </div>
+
+        <div class="recipe-card reveal" onclick="openModal('recipe2')" role="button" tabindex="0" aria-label="View recipe 2" onkeypress="if(event.key==='Enter')openModal('recipe2')">
+          <div class="recipe-img pink-bg" aria-label="Recipe image placeholder">
+            <div style="text-align:center;padding:20px;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#F4A7C3" stroke-width="1.5" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              <p style="margin-top:8px;font-size:0.78rem;">Add recipe photo here</p>
+            </div>
+            <span class="recipe-category-badge">Your Category</span>
+          </div>
+          <div class="recipe-card-body">
+            <h3>Your Second Recipe Here</h3>
+            <p class="recipe-desc">Add a warm, personal description — your recipes do not need to be complicated to be worth sharing with the world.</p>
+            <span class="btn btn-outline-green btn-sm">View Recipe</span>
+          </div>
+        </div>
+
+        <div class="recipe-card reveal" onclick="openModal('recipe3')" role="button" tabindex="0" aria-label="View recipe 3" onkeypress="if(event.key==='Enter')openModal('recipe3')">
+          <div class="recipe-img yellow-bg" aria-label="Recipe image placeholder">
+            <div style="text-align:center;padding:20px;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C8A400" stroke-width="1.5" aria-hidden="true"><path d="M3 2h18l-2 7H5L3 2z"/><path d="M5 9l1 12h12l1-12"/><line x1="9" y1="13" x2="9" y2="18"/><line x1="15" y1="13" x2="15" y2="18"/></svg>
+              <p style="margin-top:8px;font-size:0.78rem;">Add recipe photo here</p>
+            </div>
+            <span class="recipe-category-badge">Your Category</span>
+          </div>
+          <div class="recipe-card-body">
+            <h3>Your Third Recipe Here</h3>
+            <p class="recipe-desc">Every recipe has a story. Write yours here — where you found it, who you make it for, or why you keep coming back to it.</p>
+            <span class="btn btn-outline-green btn-sm">View Recipe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RECIPE MODALS ===== -->
+  <!-- EDIT: Replace all content inside each modal with your actual recipe details -->
+  <div class="modal-overlay" id="modal-recipe1" aria-modal="true" role="dialog" aria-label="Recipe detail" onclick="closeModalOnOverlay(event,'modal-recipe1')">
+    <div class="recipe-modal">
+      <div class="modal-img green-bg" aria-label="Recipe image placeholder">Your recipe photo here</div>
+      <div class="modal-body">
+        <button class="modal-close" onclick="closeModal('recipe1')" aria-label="Close recipe modal">X</button>
+        <h2 class="modal-title">Your Recipe Name Here</h2>
+        <p class="modal-prep">Preparation time: XX mins &nbsp;|&nbsp; Serves: X</p>
+
+        <h3 class="modal-section-title">Ingredients</h3>
+        <ul>
+          <li>Ingredient 1 — add your own here</li>
+          <li>Ingredient 2 — replace with real quantities</li>
+          <li>Ingredient 3 — keep it simple and clear</li>
+          <li>Add more ingredients as needed</li>
+        </ul>
+
+        <h3 class="modal-section-title">Instructions</h3>
+        <ol>
+          <li>Step 1 — describe what to do first</li>
+          <li>Step 2 — continue with clear, short steps</li>
+          <li>Step 3 — each step on its own line is easiest to follow</li>
+          <li>Add as many steps as the recipe needs</li>
+        </ol>
+
+        <div class="modal-notes">
+          <strong>Notes:</strong> Add any personal tips, substitutions or things you have learned while making this recipe. This is your personal touch.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-recipe2" aria-modal="true" role="dialog" aria-label="Recipe detail" onclick="closeModalOnOverlay(event,'modal-recipe2')">
+    <div class="recipe-modal">
+      <div class="modal-img pink-bg" aria-label="Recipe image placeholder">Your recipe photo here</div>
+      <div class="modal-body">
+        <button class="modal-close" onclick="closeModal('recipe2')" aria-label="Close recipe modal">X</button>
+        <h2 class="modal-title">Your Second Recipe Here</h2>
+        <p class="modal-prep">Preparation time: XX mins &nbsp;|&nbsp; Serves: X</p>
+
+        <h3 class="modal-section-title">Ingredients</h3>
+        <ul>
+          <li>Ingredient 1 — replace with yours</li>
+          <li>Ingredient 2 — with real measurements</li>
+          <li>Ingredient 3 — add as many as needed</li>
+        </ul>
+
+        <h3 class="modal-section-title">Instructions</h3>
+        <ol>
+          <li>Step 1 — describe what to do</li>
+          <li>Step 2 — keep each step short and clear</li>
+          <li>Add all the steps your recipe needs</li>
+        </ol>
+
+        <div class="modal-notes">
+          <strong>Notes:</strong> Your personal tips, substitutions or memories attached to this recipe.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-recipe3" aria-modal="true" role="dialog" aria-label="Recipe detail" onclick="closeModalOnOverlay(event,'modal-recipe3')">
+    <div class="recipe-modal">
+      <div class="modal-img yellow-bg" aria-label="Recipe image placeholder">Your recipe photo here</div>
+      <div class="modal-body">
+        <button class="modal-close" onclick="closeModal('recipe3')" aria-label="Close recipe modal">X</button>
+        <h2 class="modal-title">Your Third Recipe Here</h2>
+        <p class="modal-prep">Preparation time: XX mins &nbsp;|&nbsp; Serves: X</p>
+
+        <h3 class="modal-section-title">Ingredients</h3>
+        <ul>
+          <li>Ingredient 1 — replace with yours</li>
+          <li>Ingredient 2 — use real measurements</li>
+          <li>Ingredient 3 — add as many as needed</li>
+        </ul>
+
+        <h3 class="modal-section-title">Instructions</h3>
+        <ol>
+          <li>Step 1 — what to do first</li>
+          <li>Step 2 — clear and friendly writing</li>
+          <li>Add all steps that this recipe needs</li>
+        </ol>
+
+        <div class="modal-notes">
+          <strong>Notes:</strong> A personal tip, substitution idea, or anything that makes this recipe extra special.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="section-header reveal">
+      <div class="section-tag">Projects &amp; Learning</div>
+      <h2 class="section-title" id="projects-heading">Building, learning, growing</h2>
+      <p class="section-sub">A space for my projects, coursework, case studies and everything I am working on as I grow. More coming soon.</p>
+    </div>
+    <!-- EDIT: Replace each project card with your actual projects, courses, or case studies -->
+    <div class="projects-grid">
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Business</span>
+        <h3>Business Project Placeholder</h3>
+        <p>This card is ready for your first business project, case study or analysis. Describe what you worked on, what tools you used and what you learned.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Finance</span>
+        <h3>Finance or Excel Work</h3>
+        <p>Add a financial model, Excel project, data analysis or any finance-related work you are proud of. Replace this with a real description when ready.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Healthcare</span>
+        <h3>Healthcare Strategy Project</h3>
+        <p>This could be a healthcare business case, a strategy analysis or a research piece at the intersection of clinical knowledge and business thinking.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Learning</span>
+        <h3>Course or Certification</h3>
+        <p>Add a course, certification or programme you have completed here. Mention what you learned and how it connects to your wider goals.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Data Analysis</span>
+        <h3>Data Analysis or Case Study</h3>
+        <p>Did you complete a data project, an Excel analysis or a business case? Showcase it here with a brief description and what you discovered.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+
+      <div class="project-card reveal" role="article">
+        <span class="project-tag">Strategy</span>
+        <h3>Strategy or Research Work</h3>
+        <p>A strategic analysis, research paper, or independent study project. This card is yours to fill in whenever you have work worth sharing.</p>
+        <div class="project-status">
+          <span class="status-dot"></span>
+          Coming soon
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="full-width" aria-labelledby="contact-heading">
+    <div class="contact-inner reveal">
+      <div class="section-header" style="margin-bottom:36px;">
+        <div class="section-tag">Get in Touch</div>
+        <h2 class="section-title" id="contact-heading">Say hello</h2>
+        <p class="section-sub" style="margin-bottom:0;">I would love to connect. Whether it is about healthcare, business, learning or just a good conversation.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-top">
+          <h2>Rakshini Arun</h2>
+          <p>BDS Graduate | Healthcare &bull; Business &bull; Strategy</p>
+        </div>
+        <!-- EDIT: Replace each placeholder with your actual contact details -->
+        <div class="contact-links">
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon pink" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8639A" stroke-width="1.8">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <!-- EDIT: Replace with your actual email address -->
+              <div class="contact-item-value">your.email@example.com</div>
+            </div>
+          </div>
+
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon green" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A7C5F" stroke-width="1.8">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">LinkedIn</div>
+              <!-- EDIT: Replace with your actual LinkedIn URL -->
+              <div class="contact-item-value">linkedin.com/in/your-profile</div>
+            </div>
+          </div>
+
+          <div class="contact-item" role="listitem">
+            <div class="contact-item-icon pink" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8639A" stroke-width="1.8">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-item-label">Other Social / Link</div>
+              <!-- EDIT: Replace with any other link you want to share -->
+              <div class="contact-item-value">Your link here — or remove this card</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo">Rakshini Arun</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <!-- EDIT: Replace # with your actual LinkedIn and email links -->
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#projects">Projects</a>
+      </nav>
+      <p class="footer-copy">&copy; 2026 Rakshini Arun. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // --- NAV SCROLL SHADOW ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // --- MOBILE MENU ---
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      hamburger.setAttribute('aria-expanded', String(menuOpen));
+      const spans = hamburger.querySelectorAll('span');
+      if (menuOpen) {
+        spans[0].style.cssText = 'transform:translateY(7px) rotate(45deg)';
+        spans[1].style.cssText = 'opacity:0;transform:scaleX(0)';
+        spans[2].style.cssText = 'transform:translateY(-7px) rotate(-45deg)';
+      } else {
+        spans.forEach(s => s.style.cssText = '');
+      }
+    });
+
+    function closeMobileMenu() {
+      menuOpen = false;
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.querySelectorAll('span').forEach(s => s.style.cssText = '');
+    }
+
+    // --- REVEAL ANIMATION ---
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // --- RECIPE MODAL ---
+    function openModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      if (modal) {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById('modal-' + id);
+      if (modal) {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closeModalOnOverlay(event, id) {
+      if (event.target === document.getElementById('modal-' + id)) {
+        closeModal(id);
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(m => {
+          m.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    // --- ACTIVE NAV ON SCROLL ---
+    const sections = document.querySelectorAll('section[id]');
+    const navLinkEls = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinkEls.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+  </script>
+</body>
+</html>
